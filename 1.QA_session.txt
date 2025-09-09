@@ -13,7 +13,6 @@ POST (Power-On Self Test): BIOS checks if your hardware (RAM, CPU, keyboard, etc
 Boot Loader: BIOS finds the storage device (like SSD/HDD) and loads the OS from it.
 OS Takes Over: Once the OS starts, BIOS steps back.
 
-![alt text](image.png)
 
 BIOS starts first when you power on the computer.
 It performs a hardware check (POST).
@@ -24,9 +23,8 @@ Finally, the Operating System start
 UEFI?
 UEFI stands for Unified Extensible Firmware Interface.
 
-![alt text](image-1.png)
 
-ecurity Features in UEFI
+Security Features in UEFI
 Secure Boot: Prevents unauthorized OS or malware from loading.
 TPM Integration: Works with encryption tools like BitLocker.
 Password Protection: Can lock firmware settings.
@@ -96,8 +94,6 @@ Secure file transfer: scp or rsync over SSH
 Tunneling and port forwarding
 Git operations over SSH
 
-![alt text](image-2.png)
-
 🔑 How They Work Together in SSH
 RSA is used during the initial handshake:
 
@@ -106,4 +102,5 @@ Only the server can decrypt it using its private RSA key.
 Once the session key is securely shared, AES takes over:
 
 All further communication is encrypted using AES with that session key.
+
 This ensures fast and secure data transfer.
