@@ -1,0 +1,109 @@
+#BIOS
+
+Basic Input/Output System
+It's a small program stored on the chip of your cmptr mthrbrd
+It's job is to start your PC and load the OS
+
+What Does BIOS Do?
+Here’s what happens when you press the power button:
+
+Power On: You press the button.
+BIOS Starts: The BIOS chip wakes up and runs its code.
+POST (Power-On Self Test): BIOS checks if your hardware (RAM, CPU, keyboard, etc.) is working.
+Boot Loader: BIOS finds the storage device (like SSD/HDD) and loads the OS from it.
+OS Takes Over: Once the OS starts, BIOS steps back.
+
+![alt text](image.png)
+
+BIOS starts first when you power on the computer.
+It performs a hardware check (POST).
+Then it finds the boot device (like SSD/HDD).
+Loads the bootloader (e.g., GRUB).
+Finally, the Operating System start
+
+UEFI?
+UEFI stands for Unified Extensible Firmware Interface.
+
+![alt text](image-1.png)
+
+ecurity Features in UEFI
+Secure Boot: Prevents unauthorized OS or malware from loading.
+TPM Integration: Works with encryption tools like BitLocker.
+Password Protection: Can lock firmware settings.
+
+BIOS/UEFI can configure system bus and clock speed, but with limitations and safety checks. Here's how it works:
+
+🧠 What Are System Bus and Clock Speed?
+System Bus: Transfers data between CPU, RAM, and other components.
+Clock Speed: Determines how fast the CPU and other components operate (measured in MHz or GHz).
+⚙️ BIOS/UEFI Configuration Options
+In many systems, especially desktops and gaming laptops, BIOS/UEFI allows you to:
+
+✅ Configure:
+CPU multiplier (affects clock speed)
+Base clock (BCLK) frequency
+RAM frequency and timings
+Voltage settings for CPU and RAM
+❌ Cannot Configure:
+Physical bus architecture (e.g., PCIe lanes)
+Deep chipset-level timings (unless unlocked)
+
+Let’s say your CPU runs at:
+
+Base Clock = 100 MHz
+Multiplier = 36
+So, CPU Speed = 100 × 36 = 3.6 GHz
+
+In BIOS, you can:
+
+Increase multiplier to 40 → 4.0 GHz
+Adjust RAM speed from 2400 MHz to 3200 MHz
+This is called overclocking, and it’s often used to boost performance.
+
+⚠️ Risks of Changing These Settings
+Overheating
+System instability
+Warranty void
+Data loss if unstable
+Modern BIOS/UEFI often includes safe limits, auto-recovery, and thermal protection.
+
+Why TPM Is Important
+TPM helps your system:
+
+Boot securely (with Secure Boot)
+Encrypt your disk (with BitLocker or LUKS)
+Prevent unauthorized access
+Detect tampering or malware before the OS loads
+
+Here’s a simplified flow:
+
+Power On → BIOS/UEFI starts
+TPM checks system integrity (bootloader, OS files)
+If everything is clean:
+TPM releases the encryption key
+OS boots normally
+If something is tampered:
+TPM locks the key
+OS won’t boot or asks for recovery
+
+
+SSH (Secure Shell)
+SSH is a protocol used to securely connect to remote systems over an unsecured network. It encrypts the session to protect data and credentials.
+
+Common SSH Use Cases:
+Remote login to servers: ssh user@hostname
+Secure file transfer: scp or rsync over SSH
+Tunneling and port forwarding
+Git operations over SSH
+
+![alt text](image-2.png)
+
+🔑 How They Work Together in SSH
+RSA is used during the initial handshake:
+
+The client uses the server’s public RSA key to encrypt a random session key.
+Only the server can decrypt it using its private RSA key.
+Once the session key is securely shared, AES takes over:
+
+All further communication is encrypted using AES with that session key.
+This ensures fast and secure data transfer.
