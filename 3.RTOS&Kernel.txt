@@ -1,0 +1,66 @@
+What is an OS (Operating System)?
+An Operating System (OS) is software that manages hardware and software resources on a computer. It acts as a bridge between the user and the hardware.
+
+What is an RTOS (Real-Time Operating System)?
+An RTOS is a special type of OS designed to handle tasks within strict timing constraints. It’s used in systems where timing is critical.
+
+🔹 Real-World Examples:
+Airbags in cars – must deploy within milliseconds during a crash.
+Pacemakers – must respond instantly to heart signals.
+Industrial robots – must move precisely and on time.
+
+ Characteristics of RTOS
+Here are the key features that make RTOS different from general-purpose OS:
+
+Characteristic	 Description
+Deterministic    Tasks are completed within a known time frame (predictable behavior).
+Low Latency	     Fast response to external events (interrupts).
+Multitasking	 Can run multiple tasks with priority levels.
+Minimal Jitter	 Consistent timing between task executions.
+Reliability	     Designed for systems that must run continuously without failure.
+Small Footprint	 Uses less memory and CPU – ideal for embedded systems.
+
+
+🚀 RTOS Boot Flow (Simplified)
+Here’s how an RTOS boots up, step by step:
+
+Power On
+→ Microcontroller or processor gets power.
+
+Bootloader Executes
+→ Initializes basic hardware and loads the RTOS kernel.
+
+RTOS Kernel Starts
+→ Sets up memory, timers, interrupts, and scheduler.
+
+Task Initialization
+→ Application tasks are created and assigned priorities.
+
+Scheduler Runs
+→ Starts executing tasks based on priority and timing.
+
+System Operates
+→ RTOS keeps switching between tasks as needed.
+
+🔧 Real-World RTOS Boot Example: Smart Washing Machine
+Power On → User presses the power button.
+Bootloader → Initializes sensors, motor controller.
+RTOS Kernel → Starts managing tasks like water level, temperature, drum rotation.
+Tasks:
+Task 1: Monitor water level.
+Task 2: Control motor speed.
+Task 3: Display status on screen.
+Scheduler → Ensures each task runs at the right time (e.g., motor control every 10ms).
+
+Refer image in on rtos.png
+
+
+ Real-World Example: Smart Home Thermostat
+Task 1: Read temperature sensor.
+Task 2: Display temperature on screen.
+Task 3: Control heater or AC.
+ISR: Button press to change settings.
+Scheduler: Ensures sensor reading happens every 1 second.
+Message Queue: Passes temperature data from sensor task to display task.
+Semaphore: Ensures only one task accesses the display at a time.
+
